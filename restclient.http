@@ -1,0 +1,47 @@
+@host_url=http://localhost:3000
+
+### Register drone
+POST {{host_url}}/drones
+Content-Type: application/json
+
+{
+  "serialNumber": "54635634563645645645",
+  "model": "Middleweight",
+  "weightLimit": 250,
+  "batteryCapacity": 100
+}
+
+### Get available drones
+GET {{host_url}}/drones/available
+
+### Load drone
+POST {{host_url}}/drones/load
+Content-Type: application/json
+
+{
+  "medications": [
+    {
+      "name": "Aspirina",
+      "weight": 35,
+      "code": "ASP_500",
+      "image": "RXN0byBlcyB1biBmaWNoZXJvIGVuIHRleHRvIHBsYW5vLgpTb2xvIHNlcnZpcsOhIHBhcmEgY29t"
+    },
+    {
+      "name": "Ibuprofén",
+      "weight": 60,
+      "code": "IBU_200",
+      "image": "cHJvYmFyIGNvbW8gZnVuY2lvbmEgZWwgY29tYW5kbyBiYXNlNjQuCm5vcm91dGUyaG9zdC5jb20K"
+    }
+  ]
+}
+
+### Get the load
+@id=54635634563645645645
+
+GET {{host_url}}/drones/medications/{{id}}
+
+### Get battery status
+GET {{host_url}}/drones/battery/{{id}}
+
+### Get logs
+GET {{host_url}}/drones/logs
