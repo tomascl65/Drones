@@ -10,7 +10,7 @@
     "test": "jest --detectOpenHandles",
     "coverage": "jest --collectCoverage"
   },
-  "author": "",
+  "author": "Tomas Corrales Lemoine <tomascl2015@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
